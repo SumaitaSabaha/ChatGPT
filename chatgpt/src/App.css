@@ -31,16 +31,40 @@
   position: relative;
 }
 .chat-log {
-
+  /* padding: 24px; */
+  text-align: left; 
 }
-.chat-message {
-
+.chat-message.chatgpt {
+  background-color: #444654;
+}
+.chat-message-center {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  padding: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  
 }
 .avatar {
-
+  background: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.avatar.chatgpt {
+  background: #0da37f;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .message {
-  
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .chat-input-holder {
   padding: 24px;
