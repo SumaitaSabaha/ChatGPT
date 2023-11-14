@@ -1,23 +1,30 @@
+import './normal.css';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <div className="sidebar">
-        <div className="top">
-          <div className="logo"><img src="" alt="" /><span className="brand">ChatGPT</span></div>
-          <button className="button"><img src="" alt="" className="addBtn"/>New Chat</button>
-          <div className="queries">
-            <button className="query"><img src="" alt=""/>What is Programming ?</button>
-            <button className="query"><img src="" alt=""/>What is Programming ?</button>
+      <aside className="sidemenu">
+        <div className="sidemenu-button">
+          <span>+</span>
+          New Chat
+        </div>
+      </aside>
+      <section className="chatbox">
+        <div className="chat-log">
+          <div className="chat-message">
+            <div className="avatar">Me</div>
+            <div className="message">Message</div>
           </div>
-
         </div>
-        <div className="bottom">
-
+        <div className="chat-input-holder">
+          <textarea 
+            rows="1"
+            className="chat-input-text-area"
+          >
+          </textarea>
         </div>
-      </div>
-      <div className="main"></div>
+      </section>
     </div>
   );
 }
