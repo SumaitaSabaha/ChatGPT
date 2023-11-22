@@ -1,3 +1,21 @@
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 .App {
   text-align: center;
   display: flex;
@@ -35,7 +53,7 @@
   flex: 1;
   background-color: #343541;
   position: relative;
-  overflow-y: auto; /* Add this line for scrolling */
+  overflow-y: auto; 
 }
 
 .chat-log {
@@ -81,10 +99,7 @@
 
 .chat-input-holder {
   padding: 24px;
-  position: relative; /* Change from absolute to relative */
-  /* margin-top: auto; */
-  /* bottom: 0; */ /* Remove this line */
-  /* left: 0;right: 0; */ /* Remove this line */
+  position: relative; 
 }
 
 .chat-input-text-area {
