@@ -16,13 +16,30 @@ function App() {
 
   async function handleSubmit(e){
     e.preventDefault();
-    setChatLog([...chatLog, { user: "me", message: `${input}`}])
-    setInput = ""
+    let chatLogNew = [...chatLog, { user: "me", message: `${input}`}]
+    setInput("");
+    setChatLog(chatLogNew);
+    const messages = chatLogNew.map((message) => message.message).join("\n")
+    const response = await fetch("http://localhost:3080/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: messages
+      })
+    });
+    const data = await response.json();
+    setChatLog([...chatLogNew, { user: "gpt", message: `${data.message}`}])
+    console.log(data.message);
   }
   return (
     <div className="App">
       <aside className="sidemenu">
-        <div className="sidemenu-button">
+        <div className="sidemenu-button" onClick={() => { setChatLog([{
+    user: "gpt",
+    message: "How can I help you today?"
+  }])}}>
           <span>+</span>
           New Chat
         </div>
